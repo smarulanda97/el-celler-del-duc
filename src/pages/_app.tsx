@@ -1,16 +1,17 @@
-import React from 'react';
 import type { AppProps } from 'next/app';
+import React, { ReactElement } from 'react';
 import { Hydrate } from 'react-query/hydration';
+import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { queryClient } from '@libs/react-query/queryClient';
 
 import '@styles/index.scss';
 
-function App({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient());
+function App({ Component, pageProps }: AppProps): ReactElement {
+  const [client] = React.useState(() => queryClient);
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={client}>
       <Hydrate state={pageProps.dehydratedState}>
         <Component {...pageProps} />
       </Hydrate>
