@@ -1,9 +1,8 @@
 import type { AppProps } from 'next/app';
 import React, { ReactElement } from 'react';
 import { Hydrate } from 'react-query/hydration';
-import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { queryClient } from '@libs/react-query/queryClient';
+import { queryClient, QueryClientProvider } from '@libs/react-query/client';
 
 import '@styles/index.scss';
 

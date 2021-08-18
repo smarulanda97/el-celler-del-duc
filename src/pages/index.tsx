@@ -2,15 +2,15 @@ import { QueryClient } from 'react-query';
 import { GetStaticProps, NextPage } from 'next';
 import { dehydrate } from 'react-query/hydration';
 
+import { App } from '@components/index';
+
 const HomePage: NextPage<any> = () => {
   return (
-    <div>
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
-    </div>
+    <App>
+      <h1>
+        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      </h1>
+    </App>
   );
 };
 
