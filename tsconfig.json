@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@libs/*": ["libs/*"],
+      "@core/*": ["core/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["src/pages/*"],
       "@tests/*": ["src/tests/*"],
@@ -25,9 +26,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "plugins": [{
-      "name": "typescript-plugin-css-modules"
-    }]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "./*.d.ts"]
