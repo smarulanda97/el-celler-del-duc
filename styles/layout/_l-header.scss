@@ -1,0 +1,17 @@
+.header {
+  top:0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+
+  &__brand {
+    padding: .7rem 0;
+    margin-left: 3rem;
+  }
+
+  &__collapse {
+    margin: 0 3rem 0 0;
+    justify-content: flex-end;
+  }
+}

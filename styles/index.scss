@@ -1,7 +1,14 @@
 /* Override bootstrap default */
-@import "abstracts/a-variables";
-@import "abstracts/a-mixins";
-@import 'abstracts/a-functions';
+@import
+  'abstracts/a-variables',
+  'abstracts/a-mixins',
+  'abstracts/a-functions';
+
+@import
+  'layout/l-header';
+
+@import
+  'menus/m-main';
 
 /* import bootstrap to set changes */
 @import "./../node_modules/bootstrap/scss/bootstrap";

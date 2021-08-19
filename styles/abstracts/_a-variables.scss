@@ -6,6 +6,7 @@ $secondary: #887025;
 
 $dark: #0c0901;
 $body: #818181;
+$dark-transparent: rgba(12,12,13,0.78);
 
 $theme-colors: (
   'dark': $dark,
@@ -13,6 +14,7 @@ $theme-colors: (
   'body': $body,
   'primary': $primary,
   'secondary': $secondary,
+  'dark-transparent': $dark-transparent,
 );
 
 $text-colors: (
@@ -21,6 +23,7 @@ $text-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
+  'dark-transparent': $dark-transparent,
 );
 
 $font-family-cabin: 'Cabin', sans-serif;
