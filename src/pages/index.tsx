@@ -7,9 +7,7 @@ import { App } from '@components/index';
 const HomePage: NextPage<any> = () => {
   return (
     <App>
-      <h1>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      <div />
     </App>
   );
 };

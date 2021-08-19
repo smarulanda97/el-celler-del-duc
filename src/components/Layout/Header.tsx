@@ -1,59 +1,59 @@
 import { ReactElement } from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
 
-import Link from 'next/link';
 import Image from 'next/image';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import logo from '../../../public/logo.png';
+import { Navigation } from '@components/index';
+
+const mainNav = {
+  className: 'main-nav',
+  items: [
+    {
+      id: '13',
+      link: '/',
+      title: 'Inicio',
+    },
+    {
+      id: '13',
+      link: '/',
+      title: 'Menú del día',
+    },
+    {
+      id: '13',
+      link: '/',
+      title: 'Reservas',
+    },
+    {
+      id: '13',
+      link: '/',
+      title: 'Sobre nosotros',
+    },
+    {
+      id: '13',
+      link: '/',
+      title: 'Ubicación',
+    },
+  ],
+};
 
 function Header(): ReactElement {
   return (
-    <header className="header">
-      <Navbar>
-        <Container fluid>
-          <Navbar.Brand>
+    <header className={'header'}>
+      <Navbar
+        expand={'lg'}
+        bg={'dark-transparent'}
+        className={'header__navbar'}
+      >
+        <Container fluid className={'header__container'}>
+          <Navbar.Brand className={'header__brand'}>
             <Image src={logo} />
           </Navbar.Brand>
-          <Navbar.Collapse>
-            <Nav>
-              <Nav.Item>
-                <Link href={'/'}>
-                  <Nav.Link>
-                    <span>Home</span>
-                  </Nav.Link>
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link href={'/'}>
-                  <Nav.Link>
-                    <span>Home</span>
-                  </Nav.Link>
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link href={'/'}>
-                  <Nav.Link>
-                    <span>About</span>
-                  </Nav.Link>
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link href={'/'}>
-                  <Nav.Link>
-                    <span>Menu</span>
-                  </Nav.Link>
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link href={'/'}>
-                  <Nav.Link>
-                    <span>Location</span>
-                  </Nav.Link>
-                </Link>
-              </Nav.Item>
-            </Nav>
+          <Navbar.Toggle aria-controls={'main-navbar'} />
+          <Navbar.Collapse className={'header__collapse'} id={'main-navbar'}>
+            <Navigation {...mainNav} />
           </Navbar.Collapse>
         </Container>
       </Navbar>
