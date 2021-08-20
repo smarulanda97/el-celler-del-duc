@@ -1,11 +1,8 @@
-import { ReactElement } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import { Container, Navbar } from 'react-bootstrap';
 
-import Image from 'next/image';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import logo from '../../../public/logo.png';
+import logo from '@public/logo.png';
 import { Navigation } from '@components/index';
 
 const mainNav = {
@@ -39,7 +36,7 @@ const mainNav = {
   ],
 };
 
-function Header(): ReactElement {
+function Header(): React.ReactElement {
   return (
     <header className={'header'}>
       <Navbar

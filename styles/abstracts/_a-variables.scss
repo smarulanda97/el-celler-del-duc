@@ -6,6 +6,7 @@ $secondary: #887025;
 
 $dark: #0c0901;
 $body: #818181;
+$dark-solid: #141313;
 $dark-transparent: rgba(12,12,13,0.78);
 
 $theme-colors: (
@@ -14,6 +15,7 @@ $theme-colors: (
   'body': $body,
   'primary': $primary,
   'secondary': $secondary,
+  'dark-solid': $dark-solid,
   'dark-transparent': $dark-transparent,
 );
 
@@ -23,6 +25,7 @@ $text-colors: (
   'white': $white,
   'primary': $primary,
   'secondary': $secondary,
+  'dark-solid': $dark-solid,
   'dark-transparent': $dark-transparent,
 );
 

@@ -5,10 +5,12 @@
   'abstracts/a-functions';
 
 @import
-  'layout/l-header';
+  'layout/l-header',
+  'layout/l-footer';
 
 @import
-  'menus/m-main';
+  'menus/m-main',
+  'menus/m-social';
 
 /* import bootstrap to set changes */
 @import "./../node_modules/bootstrap/scss/bootstrap";

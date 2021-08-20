@@ -1,3 +1,5 @@
+@import './../abstracts/a-mixins';
+
 .header {
   top:0;
   left: 0;
@@ -5,9 +7,18 @@
   width: 100%;
   position: absolute;
 
+  &__container {
+    @include respond-below(md) {
+      padding: 0.3rem .2rem;
+    }
+  }
+
   &__brand {
     padding: .7rem 0;
-    margin-left: 3rem;
+
+    @include respond-above(md) {
+      margin-left: 3rem;
+    }
   }
 
   &__collapse {
