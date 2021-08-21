@@ -3,40 +3,13 @@ import Image from 'next/image';
 import { Container, Navbar } from 'react-bootstrap';
 
 import logo from '@public/logo.png';
+import { useMenu } from '@hooks/index';
 import { Navigation } from '@components/index';
-
-const mainNav = {
-  className: 'main-nav',
-  items: [
-    {
-      id: '13',
-      link: '/',
-      title: 'Inicio',
-    },
-    {
-      id: '13',
-      link: '/',
-      title: 'Menú del día',
-    },
-    {
-      id: '13',
-      link: '/',
-      title: 'Reservas',
-    },
-    {
-      id: '13',
-      link: '/',
-      title: 'Sobre nosotros',
-    },
-    {
-      id: '13',
-      link: '/',
-      title: 'Ubicación',
-    },
-  ],
-};
+import { queryKeys } from '@libs/react-query/constants';
 
 function Header(): React.ReactElement {
+  const { items } = useMenu('main', queryKeys.mainMenu);
+
   return (
     <header className={'header'}>
       <Navbar
@@ -50,7 +23,7 @@ function Header(): React.ReactElement {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={'main-navbar'} />
           <Navbar.Collapse className={'header__collapse'} id={'main-navbar'}>
-            <Navigation {...mainNav} />
+            <Navigation className={'main-nav'} items={items} />
           </Navbar.Collapse>
         </Container>
       </Navbar>

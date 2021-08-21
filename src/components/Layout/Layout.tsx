@@ -1,7 +1,9 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '@components/Footer/Footer';
+import Header from '@components/Header/Header';
+
+import { Banner } from '@components/index';
 
 interface LayoutProps {
   children?: JSX.Element | JSX.Element[];
@@ -13,7 +15,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const { children, displayHeader = true, displayFooter = true } = props;
 
   const renderHeader = () => {
-    return !displayHeader ? null : <Header />;
+    return !displayHeader ? null : (
+      <>
+        <Header />
+        <Banner />
+      </>
+    );
   };
 
   const renderFooter = () => {
