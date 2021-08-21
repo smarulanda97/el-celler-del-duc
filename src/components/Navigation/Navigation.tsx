@@ -1,10 +1,12 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
+
 import NavigationItem from './NavigationItem/NavigationItem';
+import { DrupalMenuLinkContent } from '@libs/types/AppTypes';
 
 interface NavigationProps {
   className: string;
-  items: any[];
+  items: DrupalMenuLinkContent[];
 }
 
 const Navigation: React.FC<NavigationProps> = (props) => {

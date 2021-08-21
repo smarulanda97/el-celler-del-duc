@@ -11,6 +11,7 @@
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
       "@mocks/*": ["src/mocks/*"],
+      "@queries/*": ["src/queries/*"],
       "@contexts/*": ["src/contexts/*"],
       "@components/*": ["src/components/*"],
     },
