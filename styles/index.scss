@@ -1,16 +1,19 @@
 /* Override bootstrap default */
 @import
-  'abstracts/a-variables',
-  'abstracts/a-mixins',
-  'abstracts/a-functions';
+  'scss/abstracts/a-variables',
+  'scss/abstracts/a-mixins',
+  'scss/abstracts/a-functions';
+
+@import 'scss/layout/l-header',
+  'scss/layout/l-footer';
 
 @import
-  'layout/l-header',
-  'layout/l-footer';
+  'scss/menus/m-main',
+  'scss/menus/m-social';
 
 @import
-  'menus/m-main',
-  'menus/m-social';
+  'scss/components/c-banner',
+  'scss/components/c-scroll-bottom';
 
 /* import bootstrap to set changes */
 @import "./../node_modules/bootstrap/scss/bootstrap";

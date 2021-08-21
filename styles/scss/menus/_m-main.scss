@@ -1,8 +1,8 @@
-@import './../abstracts/a-variables', './../abstracts/a-mixins';
+@import '../abstracts/a-variables', '../abstracts/a-mixins';
 
 .main-nav {
   .nav-item {
-    padding: .93rem 1.06rem;
+    padding: .93rem .9rem;
 
     & > a {
       padding: 0 .125rem;

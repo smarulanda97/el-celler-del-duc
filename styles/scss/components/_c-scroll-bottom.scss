@@ -1,0 +1,25 @@
+@import './../abstracts/a-variables';
+
+.scroll-bottom {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+
+  &__mouse {
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid $white;
+  }
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin: 6px auto;
+    background-size: contain;
+    background-image: url(./../../images/banner_scroll_down.svg);
+  }
+}
