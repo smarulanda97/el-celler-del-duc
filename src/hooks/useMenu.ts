@@ -13,9 +13,7 @@ export function useMenu(name: string, cacheKey: string): UseMenu {
   const { data } = useQuery<TJsonApiBody>(cacheKey, () => getMenu(name));
 
   let items: DrupalMenuLinkContent[] = [];
-  if (data) {
-    items = deserialize(data);
-  }
+  if (data) items = deserialize(data);
 
   return {
     items,

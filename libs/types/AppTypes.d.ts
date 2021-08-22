@@ -1,3 +1,9 @@
+export interface DrupalLinkAttributes {
+  attributes: {
+    [key: string]: string | [];
+  };
+}
+
 export interface DrupalMenuLinkContent {
   description: string;
   enabled: boolean;
@@ -5,7 +11,7 @@ export interface DrupalMenuLinkContent {
   id: string;
   menu_name: string;
   meta: Record<string, unknown>;
-  options: [];
+  options: DrupalLinkAttributes;
   parent: string;
   provider: string;
   route: {
