@@ -1,3 +1,48 @@
+@import './../abstracts/a-variables', '../abstracts/a-mixins';
+
 .social-nav {
   justify-content: center;
+
+  .nav {
+    &-item {
+      width: 60px;
+      height: 60px;
+      margin: 0 1rem;
+      cursor: pointer;
+      background: $gray;
+      text-align: center;
+      border-radius: 50%;
+
+      @include on-event {
+        background: $primary;
+      }
+    }
+
+    &-link {
+      &--icon {
+        top: 50%;
+        width: 2rem;
+        height: 2rem;
+        font-size: 0;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        background-size: 2rem 2rem;
+        transform: translateY(-50%);
+      }
+
+      &--facebook-icon {
+        @extend .nav-link--icon;
+        background: url(./../../images/icon_facebook.png) no-repeat;
+      }
+      &--instagram-icon {
+        @extend .nav-link--icon;
+        background: url(./../../images/icon_instagram.png) no-repeat;
+      }
+      &--whatsapp-icon {
+        @extend .nav-link--icon;
+        background: url(./../../images/icon_whatsapp.png) no-repeat;
+      }
+    }
+  }
 }
