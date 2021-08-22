@@ -31,4 +31,4 @@ function Header(): React.ReactElement {
   );
 }
 
-export default Header;
+export default React.memo(Header);
