@@ -1,31 +1,34 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Carousel } from 'react-bootstrap';
 
-import banner1 from '@public/banner_1.jpg';
+import { getDerivativeImage } from '@utils/index';
+import BannerContent from './BannerContent/BannerContent';
+import { DrupalBanner, DrupalMediaImage } from '@libs/types/AppTypes';
 
-function Banner(): React.ReactElement {
+interface BannerProps {
+  banners: DrupalBanner[];
+}
+
+function Banner(props: BannerProps): React.ReactElement {
+  const { banners } = props;
+
+  const renderImage = (media: DrupalMediaImage) => {
+    const { src, alt } = getDerivativeImage(media, 'banner');
+    return (
+      src && <Image src={src} alt={alt} layout={'fill'} objectFit={'cover'} />
+    );
+  };
+
   return (
     <Carousel fade controls={false} className={'banner'}>
-      <Carousel.Item className={'banner__item'}>
-        <div className={'banner__overlay'} />
-        <Image src={banner1} layout={'fill'} objectFit={'cover'} />
-        <Carousel.Caption className={'banner__caption'}>
-          <h1 className={'banner__title'}>El Celler Del Duc</h1>
-          <span className={'banner__separator'} />
-          <p className={'banner__description'}>
-            The Chef creates divine combinations
-          </p>
-          <Link href={'/#'}>
-            <a className={'scroll-bottom'}>
-              <div className={'scroll-bottom__mouse'}>
-                <span className={'scroll-bottom__icon'} />
-              </div>
-            </a>
-          </Link>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {banners.length &&
+        props.banners.map((banner: DrupalBanner) => (
+          <Carousel.Item key={banner.id} className={'banner__item'}>
+            {renderImage(banner.field_media)}
+            <BannerContent {...banner} />
+          </Carousel.Item>
+        ))}
     </Carousel>
   );
 }

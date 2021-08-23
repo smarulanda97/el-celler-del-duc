@@ -1,2 +1,2 @@
 export { useMenu } from './useMenu';
-export { useCustomToast } from './useCustomToast';
+export { useResource } from './useResource';
