@@ -5,6 +5,12 @@ import { getResource } from '@queries/getResource';
 import { DrupalNodeContent } from '@libs/types/AppTypes';
 
 const fallback: DrupalNodeContent = {
+  body: {
+    value: '',
+    format: '',
+    summary: '',
+    processed: '',
+  },
   id: '',
   type: '',
   title: '',

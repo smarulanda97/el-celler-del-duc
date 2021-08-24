@@ -4,6 +4,9 @@
 'scss/abstracts/a-mixins',
 'scss/abstracts/a-functions';
 
+/* import bootstrap to set changes */
+@import "./../node_modules/bootstrap/scss/bootstrap";
+
 @import
 'scss/layout/l-header',
 'scss/layout/l-node',
@@ -16,8 +19,3 @@
 @import
 'scss/menus/m-main',
 'scss/menus/m-social';
-
-$__legacy-libsass: true;
-
-/* import bootstrap to set changes */
-@import "./../node_modules/bootstrap/scss/bootstrap";

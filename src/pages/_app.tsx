@@ -19,7 +19,7 @@ function App({ Component, pageProps }: AppProps): React.ReactElement {
         <Hydrate state={pageProps.dehydratedState}>
           <Component {...pageProps} />
         </Hydrate>
-        {/*<ReactQueryDevtools />*/}
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </React.Fragment>
   );

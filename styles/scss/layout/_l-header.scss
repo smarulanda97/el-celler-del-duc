@@ -8,9 +8,8 @@
   position: absolute;
 
   &__container {
-    padding: 0.3rem;
     @include respond-below(md) {
-      padding: 0.3rem 0.2rem;
+      padding: 0 0.2rem;
     }
   }
 
@@ -22,9 +21,9 @@
   }
 
   &__toggler-icon {
-    border: none !important;
+    border: none;
     .navbar-toggler-icon {
-      //background-image: url(./../../images/icon_menu.svg) !important;
+      background-image: url(./../../images/icon_menu.svg);
     }
   }
 
