@@ -4,7 +4,9 @@
   'scss/abstracts/a-mixins',
   'scss/abstracts/a-functions';
 
-@import 'scss/layout/l-header',
+@import
+  'scss/layout/l-header',
+  'scss/layout/l-node',
   'scss/layout/l-footer';
 
 @import

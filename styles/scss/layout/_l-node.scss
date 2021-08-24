@@ -1,0 +1,34 @@
+@import './../abstracts/a-variables';
+
+.node {
+
+  &__body {
+    text-align: center;
+    padding-top: 5rem;
+    margin-bottom: 3.75rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      font-size: 1.75rem;
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+      font-family: $font-family-cabin;
+
+      &:before, &:after {
+        margin: .9rem;
+        vertical-align: text-bottom;
+        content: url(./../../images/decorator_header.png);
+      }
+    }
+
+    p, a, span, strong {
+      max-width: 75%;
+      margin: 0 auto;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: $gray-light;
+      font-style: italic;
+      font-family: $font-family-cabin;
+    }
+  }
+}

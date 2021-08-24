@@ -32,9 +32,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
        *
        */}
       {renderHeader()}
-      <main data-testid="layout-main-content" id="main-content">
-        {children ? children : null}
-      </main>
+      <main id="main-content">{children ? children : null}</main>
       {/**
        *
        * Rendering the following components

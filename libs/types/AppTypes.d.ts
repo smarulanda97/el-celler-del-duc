@@ -62,11 +62,19 @@ export interface DrupalMenuLinkContent {
   items?: DrupalMenuLinkContent[];
 }
 
+export interface DrupalBodyField {
+  value: string;
+  format: string;
+  processed: string;
+  summary: string;
+}
+
 export interface DrupalNodeContent {
   id: string;
   type: string;
   title: string;
   path?: DrupalPath;
+  body: DrupalBodyField;
   relationshipNames: string[];
 }
 

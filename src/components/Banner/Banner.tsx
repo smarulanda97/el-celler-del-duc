@@ -25,6 +25,7 @@ function Banner(props: BannerProps): React.ReactElement {
       {banners.length &&
         props.banners.map((banner: DrupalBanner) => (
           <Carousel.Item key={banner.id} className={'banner__item'}>
+            <div className={'banner__overlay'} />
             {renderImage(banner.field_media)}
             <BannerContent {...banner} />
           </Carousel.Item>
