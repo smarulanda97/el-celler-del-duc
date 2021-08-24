@@ -21,7 +21,10 @@ function Header(): React.ReactElement {
           <Navbar.Brand className={'header__brand'}>
             <Image src={logo} />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={'main-navbar'} />
+          <Navbar.Toggle
+            aria-controls={'main-navbar'}
+            className={'header__toggler-icon'}
+          />
           <Navbar.Collapse className={'header__collapse'} id={'main-navbar'}>
             <Navigation className={'main-nav'} items={items} />
           </Navbar.Collapse>

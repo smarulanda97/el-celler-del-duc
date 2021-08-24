@@ -1,4 +1,4 @@
-@import './../abstracts/a-variables';
+@import './../abstracts/a-variables', './../abstracts/a-mixins';
 
 .banner {
   &__overlay {
@@ -19,6 +19,10 @@
 
   &__caption {
     z-index: 3;
+
+    @include respond-below(md) {
+      bottom: 6.25rem !important;
+    }
   }
 
   &__title {
@@ -31,6 +35,11 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     font-family: $font-family-oswald;
+
+    @include respond-below(md) {
+      margin-bottom: 0;
+      font-size: 1.3rem;
+    }
   }
 
   &__separator {
@@ -40,6 +49,10 @@
     content: " ";
     height: 24px;
     background: url(./../../images/separator_banner.png) no-repeat;
+
+    @include respond-below(md) {
+      margin-bottom: 1.3rem;
+    }
   }
 
   &__description {
@@ -48,5 +61,15 @@
     font-weight: 300;
     font-style: italic;
     font-family: $font-family-libre;
+
+    @include respond-below(md) {
+      font-size: .95rem;
+    }
+  }
+
+  @include respond-below(md) {
+    .scroll-bottom {
+      display: none;
+    }
   }
 }

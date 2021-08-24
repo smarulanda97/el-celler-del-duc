@@ -1,4 +1,4 @@
-@import './../abstracts/a-variables';
+@import './../abstracts/a-variables', './../abstracts/a-mixins';
 
 .node {
 
@@ -19,6 +19,10 @@
         vertical-align: text-bottom;
         content: url(./../../images/decorator_header.png);
       }
+
+      @include respond-below(md) {
+        font-size: 1.1rem;
+      }
     }
 
     p, a, span, strong {
@@ -29,6 +33,11 @@
       color: $gray-light;
       font-style: italic;
       font-family: $font-family-cabin;
+
+      @include respond-below(md) {
+        max-width: 80%;
+        font-size: 1rem;
+      }
     }
   }
 }

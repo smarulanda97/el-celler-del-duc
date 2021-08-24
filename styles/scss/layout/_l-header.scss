@@ -9,17 +9,22 @@
 
   &__container {
     padding: 0.3rem;
-
     @include respond-below(md) {
-      padding: 0.3rem .2rem;
+      padding: 0.3rem 0.2rem;
     }
   }
 
   &__brand {
     padding: .7rem 0;
-
     @include respond-above(md) {
       margin-left: 3rem;
+    }
+  }
+
+  &__toggler-icon {
+    border: none !important;
+    .navbar-toggler-icon {
+      //background-image: url(./../../images/icon_menu.svg) !important;
     }
   }
 
