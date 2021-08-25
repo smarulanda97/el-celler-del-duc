@@ -23,7 +23,13 @@
 
     @include respond-above(lg) {
       width: 50%;
-      margin: 0 auto 2.8rem;
+      margin: 0 auto 4rem;
+    }
+  }
+
+  &__item {
+    img {
+      border-radius: 5px;
     }
   }
 }

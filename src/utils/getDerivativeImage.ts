@@ -3,11 +3,15 @@ import { DrupalMediaImage } from '@libs/types/AppTypes';
 interface GetDerivativeImage {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 }
 
 const fallback = {
   src: '',
   alt: '',
+  width: 0,
+  height: 0,
 };
 
 export function getDerivativeImage(
@@ -25,5 +29,7 @@ export function getDerivativeImage(
     ...fallback,
     src: image[imageStyle].href,
     alt: media.field_media_image.resourceIdObjMeta.alt || '',
+    width: media.field_media_image.resourceIdObjMeta.width,
+    height: media.field_media_image.resourceIdObjMeta.height,
   };
 }

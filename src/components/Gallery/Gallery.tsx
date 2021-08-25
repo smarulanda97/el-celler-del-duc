@@ -1,26 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
-import SwiperCore, { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import galleryImage from '@public/gallery_example.jpg';
-
-SwiperCore.use([Pagination]);
-
-const breakpoints = {
-  '640': {
-    slidesPerView: 1,
-  },
-  '768': {
-    slidesPerView: 2,
-  },
-  '1024': {
-    slidesPerView: 3,
-  },
-};
+import { useGalleryImages } from '@hooks/index';
+import { Image, Swiper } from '@components/index';
 
 function Gallery(): React.ReactElement {
+  const { nodes } = useGalleryImages();
+
   return (
     <section className={'gallery'}>
       <Container fluid={'xl'}>
@@ -28,37 +14,33 @@ function Gallery(): React.ReactElement {
           <Col>
             <h2 className={'gallery__title'}>Galería</h2>
             <p className={'gallery__description'}>
-              If a picture says a thousand words, then you can imagine how long
-              it would take to describe all our mouthwatering selections.
+              Sómos un restaurante que pone el corazón en cada plato, utilizamos
+              productos frecos y de calidad, nuestra cocina se caracteriza por
+              hacerse en el momento.
             </p>
           </Col>
         </Row>
         <Row>
           <Col>
             <Swiper
-              slidesPerView={1}
-              breakpoints={breakpoints}
-              pagination={{ clickable: true }}
-            >
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-              <SwiperSlide className={'gallery__item'}>
-                <Image src={galleryImage} />
-              </SwiperSlide>
-            </Swiper>
+              items={nodes}
+              breakpoints={{
+                '640': {
+                  slidesPerView: 1,
+                },
+                '768': {
+                  slidesPerView: 2,
+                },
+                '1024': {
+                  slidesPerView: 3,
+                },
+              }}
+              render={(element) => (
+                <div className={'gallery__item'}>
+                  <Image media={element.field_media} imageStyle={'gallery'} />
+                </div>
+              )}
+            />
           </Col>
         </Row>
       </Container>

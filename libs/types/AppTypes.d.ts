@@ -1,3 +1,5 @@
+import { SwiperOptions } from 'swiper';
+
 interface DrupalPath {
   pid: number;
   alias: string;
@@ -18,6 +20,7 @@ interface DrupalImage {
   resourceIdObjMeta: {
     alt: string;
     height: number;
+    width: number;
     imageDerivatives: imageDerivatives;
   };
 }
@@ -74,7 +77,7 @@ export interface DrupalNodeContent {
   type: string;
   title: string;
   path?: DrupalPath;
-  body: DrupalBodyField;
+  body?: DrupalBodyField;
   relationshipNames: string[];
 }
 
@@ -82,8 +85,22 @@ export interface DrupalNodePageContent extends DrupalNodeContent {
   field_banner?: DrupalBanner[];
 }
 
+export interface DrupalNodeGalleryContent extends DrupalNodeContent {
+  field_media?: DrupalMediaImage;
+}
+
 export type AccessToken = {
   expires: number;
   token_type: string;
   access_token: string;
 };
+
+export interface SwiperBreakpoint {
+  [width: number]: SwiperOptions;
+  [ratio: string]: SwiperOptions;
+}
+
+export interface ListItem {
+  id: string;
+  field_media: DrupalMediaImage;
+}

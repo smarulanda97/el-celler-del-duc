@@ -5,4 +5,5 @@ export const queryKeys: {
   banners: 'banners',
   mainMenu: 'main-menu',
   socialMenu: 'social-menu',
+  galleryImages: 'gallery-images',
 };
