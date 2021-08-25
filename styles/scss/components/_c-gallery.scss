@@ -1,0 +1,29 @@
+@import './../abstracts/a-variables',  './../abstracts/a-placeholder',  './../abstracts/a-mixins';
+
+.gallery {
+  position: relative;
+  background: $dark-solid;
+  padding-bottom: 8rem;
+
+
+  &__title {
+    @extend %section-title;
+    color: $white;
+    padding: 4rem 0 1.5rem 0;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: center;
+    color: $gray-light;
+    margin-bottom: 2.8rem;
+    font-family: $font-family-cabin;
+
+    @include respond-above(lg) {
+      width: 50%;
+      margin: 0 auto 2.8rem;
+    }
+  }
+}

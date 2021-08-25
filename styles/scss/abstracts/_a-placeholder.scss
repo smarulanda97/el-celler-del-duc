@@ -1,0 +1,20 @@
+@import './a-variables', './a-mixins';
+
+%section-title {
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  font-family: $font-family-cabin;
+
+  &:before, &:after {
+    margin: .9rem;
+    vertical-align: text-bottom;
+    content: url(./../../images/decorator_header.png);
+  }
+
+  @include respond-below(md) {
+    font-size: 1.1rem;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 import { Banner } from '@components/index';
 import { DrupalBodyField, DrupalNodePageContent } from '@libs/types/AppTypes';
@@ -13,20 +14,18 @@ function NodePage(props: DrupalNodePageContent): React.ReactElement {
   const { field_banner: banners, body } = props;
 
   return (
-    <div className={'node node--page'}>
+    <section className={'node node--page'}>
       {banners && banners.length && (
-        <section className={'node__banner'}>
+        <div className={'node__banner'}>
           <Banner banners={banners} />
-        </section>
+        </div>
       )}
       {body && (
-        <section
-          className="node__body"
-          dangerouslySetInnerHTML={createBodyMarkup(body)}
-        />
+        <Container className="node__body">
+          <div dangerouslySetInnerHTML={createBodyMarkup(body)} />
+        </Container>
       )}
-      <h1>Drupal node page</h1>
-    </div>
+    </section>
   );
 }
 

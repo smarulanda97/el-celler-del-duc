@@ -1,4 +1,4 @@
-@import './../abstracts/a-variables', './../abstracts/a-mixins';
+@import './../abstracts/a-variables', './../abstracts/a-mixins', './../abstracts/a-placeholder';
 
 .node {
 
@@ -8,21 +8,7 @@
     margin-bottom: 3.75rem;
 
     h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-      font-size: 1.75rem;
-      margin-bottom: 2.5rem;
-      text-transform: uppercase;
-      font-family: $font-family-cabin;
-
-      &:before, &:after {
-        margin: .9rem;
-        vertical-align: text-bottom;
-        content: url(./../../images/decorator_header.png);
-      }
-
-      @include respond-below(md) {
-        font-size: 1.1rem;
-      }
+      @extend %section-title;
     }
 
     p, a, span, strong {

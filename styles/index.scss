@@ -2,6 +2,7 @@
 @import
 'scss/abstracts/a-variables',
 'scss/abstracts/a-mixins',
+'scss/abstracts/a-placeholder',
 'scss/abstracts/a-functions';
 
 /* import bootstrap to set changes */
@@ -14,6 +15,7 @@
 
 @import
 'scss/components/c-banner',
+'scss/components/c-gallery',
 'scss/components/c-scroll-bottom';
 
 @import

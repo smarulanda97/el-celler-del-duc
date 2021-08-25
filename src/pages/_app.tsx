@@ -3,9 +3,12 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { Hydrate } from 'react-query/hydration';
 import { ReactQueryDevtools } from 'react-query/devtools';
+
 import { queryClient, QueryClientProvider } from '@libs/react-query/client';
 
 import '@styles/index.scss';
+import 'swiper/swiper.min.css';
+import 'swiper/components/pagination/pagination.min.css';
 
 function App({ Component, pageProps }: AppProps): React.ReactElement {
   const [client] = React.useState(() => queryClient);
