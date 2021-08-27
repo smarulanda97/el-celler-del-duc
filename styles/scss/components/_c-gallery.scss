@@ -3,8 +3,7 @@
 .gallery {
   position: relative;
   background: $dark-solid;
-  padding-bottom: 8rem;
-
+  padding-bottom: 4rem;
 
   &__title {
     @extend %section-title;

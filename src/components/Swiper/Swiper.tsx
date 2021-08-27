@@ -28,7 +28,7 @@ function SwiperComponent(props: SwiperProps): React.ReactElement | null {
       preloadImages
       spaceBetween={30}
       breakpoints={breakpoints}
-      pagination={{ clickable: true }}
+      pagination={{ clickable: true, dynamicBullets: true }}
     >
       {items.map((item: any) => (
         <SwiperSlide key={item.id}>{render(item)}</SwiperSlide>

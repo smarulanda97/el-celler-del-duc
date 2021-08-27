@@ -6,9 +6,9 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import { queryClient, QueryClientProvider } from '@libs/react-query/client';
 
-import '@styles/index.scss';
 import 'swiper/swiper.min.css';
 import 'swiper/components/pagination/pagination.min.css';
+import '@styles/index.scss';
 
 function App({ Component, pageProps }: AppProps): React.ReactElement {
   const [client] = React.useState(() => queryClient);
