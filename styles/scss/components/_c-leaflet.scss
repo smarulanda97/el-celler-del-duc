@@ -19,15 +19,32 @@
       background-color: $dark-solid !important;
     }
     &-content {
+      margin-right: 40px !important;
+
       &-wrapper {
         background-color: $dark-solid !important;
       }
 
-      a, p, span {
-        text-align: center;
-        font-weight: bold;
-        color: $white !important;
-        font-family: $font-family-cabin;
+      p {
+        a {
+          display: block;
+          text-align: center;
+          font-weight: bold;
+          position: relative;
+          padding-left: .4rem;
+          color: $white !important;
+          font-family: $font-family-cabin;
+
+          &:after {
+            top: 50%;
+            width: 16px;
+            height: 16px;
+            right: -25px;
+            position: absolute;
+            transform: translateY(-50%);
+            content: url(./../../images/icon_link.png);
+          }
+        }
       }
     }
   }
