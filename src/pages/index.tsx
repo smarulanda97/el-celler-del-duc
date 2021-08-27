@@ -2,7 +2,7 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSidePropsContext, NextPage } from 'next';
 
-import { App, Gallery, Node } from '@components/index';
+import { App, Gallery, Location, Node } from '@components/index';
 import { getMenu, getResource } from '@queries/index';
 import { queryKeys } from '@libs/react-query/constants';
 import { getPathFromContext } from '@utils/getPathFromContext';
@@ -17,8 +17,7 @@ const HomePage: NextPage<any> = () => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
+      <Location />
     </App>
   );
 };

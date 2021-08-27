@@ -72,6 +72,13 @@ export interface DrupalBodyField {
   summary: string;
 }
 
+export interface DrupalGeoLocationField {
+  lat: number;
+  lng: number;
+  data: any[];
+  value: string;
+}
+
 export interface DrupalNodeContent {
   id: string;
   type: string;
@@ -87,6 +94,17 @@ export interface DrupalNodePageContent extends DrupalNodeContent {
 
 export interface DrupalNodeGalleryContent extends DrupalNodeContent {
   field_media?: DrupalMediaImage;
+}
+
+export interface DrupalTaxonomyTerm {
+  id: string;
+  type: string;
+  name: string;
+  description: DrupalBodyField;
+}
+
+export interface DrupalTaxonomyTermRestaurant extends DrupalTaxonomyTerm {
+  field_geolocation: DrupalGeoLocationField;
 }
 
 export type AccessToken = {
