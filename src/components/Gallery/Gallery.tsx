@@ -14,9 +14,8 @@ function Gallery(): React.ReactElement {
           <Col>
             <h2 className={'gallery__title'}>Galería</h2>
             <p className={'gallery__description'}>
-              Sómos un restaurante que pone el corazón en cada plato, utilizamos
-              productos frecos y de calidad, nuestra cocina se caracteriza por
-              hacerse en el momento.
+              Utilizamos productos frecos y de calidad, nuestra cocina se
+              caracteriza por hacerse en el momento.
             </p>
           </Col>
         </Row>
