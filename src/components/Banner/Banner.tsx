@@ -21,7 +21,7 @@ function Banner(props: BannerProps): React.ReactElement {
   };
 
   return (
-    <Carousel fade controls={false} className={'banner'}>
+    <Carousel fade controls={false} indicators={false} className={'banner'}>
       {banners.length &&
         props.banners.map((banner: DrupalBanner) => (
           <Carousel.Item key={banner.id} className={'banner__item'}>
