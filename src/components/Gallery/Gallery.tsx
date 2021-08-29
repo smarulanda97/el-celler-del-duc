@@ -4,6 +4,18 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useGalleryImages } from '@hooks/index';
 import { Image, Swiper } from '@components/index';
 
+const breakpoints = {
+  '640': {
+    slidesPerView: 2,
+  },
+  '768': {
+    slidesPerView: 2,
+  },
+  '1024': {
+    slidesPerView: 3,
+  },
+};
+
 function Gallery(): React.ReactElement {
   const { nodes } = useGalleryImages();
 
@@ -19,30 +31,18 @@ function Gallery(): React.ReactElement {
             </p>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <Swiper
-              items={nodes}
-              breakpoints={{
-                '640': {
-                  slidesPerView: 1,
-                },
-                '768': {
-                  slidesPerView: 2,
-                },
-                '1024': {
-                  slidesPerView: 3,
-                },
-              }}
-              render={(element) => (
-                <div className={'gallery__item'}>
-                  <Image media={element.field_media} imageStyle={'gallery'} />
-                </div>
-              )}
-            />
-          </Col>
-        </Row>
       </Container>
+      <div className={'gallery__container'}>
+        <Swiper
+          items={nodes}
+          breakpoints={breakpoints}
+          render={(element) => (
+            <div className={'gallery__item'}>
+              <Image media={element.field_media} imageStyle={'gallery'} />
+            </div>
+          )}
+        />
+      </div>
     </section>
   );
 }

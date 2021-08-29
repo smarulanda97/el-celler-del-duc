@@ -2,8 +2,8 @@
 
 .gallery {
   position: relative;
-  background: $dark-solid;
   padding-bottom: 4rem;
+  background: $dark-solid;
 
   &__title {
     @extend %section-title;
@@ -23,6 +23,14 @@
     @include respond-above(lg) {
       width: 50%;
       margin: 0 auto 4rem;
+    }
+  }
+
+  &__container {
+    @extend .container-xxl;
+
+    @include respond-below(xxl) {
+      padding: 0;
     }
   }
 }

@@ -26,7 +26,7 @@ function SwiperComponent(props: SwiperProps): React.ReactElement | null {
   return (
     <Swiper
       preloadImages
-      spaceBetween={30}
+      spaceBetween={0}
       breakpoints={breakpoints}
       pagination={{ clickable: true, dynamicBullets: true }}
     >

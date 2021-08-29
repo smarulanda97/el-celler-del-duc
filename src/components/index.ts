@@ -6,3 +6,4 @@ export { default as Swiper } from '@components/Swiper/Swiper';
 export { default as Gallery } from '@components/Gallery/Gallery';
 export { default as Location } from '@components/Location/Location';
 export { default as Navigation } from '@components/Navigation/Navigation';
+export { default as OpeningHour } from '@components/OpeningHour/OpeningHour';
