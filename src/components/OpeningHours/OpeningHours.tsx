@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 
-import { Image } from '@components/index';
+import { Image, OpeningHoursItem } from '@components/index';
 import { useParagraph } from '@hooks/index';
 import { DrupalParagraphOpenHours } from '@libs/types/AppTypes';
 
@@ -37,29 +37,13 @@ function OpeningHours(): React.ReactElement {
           </Col>
         </Row>
         <Row>
-          {field_items.length &&
-            field_items.map((item) => {
-              const { id, field_title, field_subtitle } = item;
-
-              return (
-                <Col xs={12} md={6} key={id} className={'o-hours__column'}>
-                  {field_title && (
-                    <h4 className={'o-hours__subtitle o-hours__subtitle--days'}>
-                      {field_title}
-                    </h4>
-                  )}
-                  {field_subtitle && (
-                    <p className={'o-hours__subtitle o-hours__subtitle--hours'}>
-                      {field_subtitle}
-                    </p>
-                  )}
-                </Col>
-              );
-            })}
+          {field_items.map((item) => (
+            <OpeningHoursItem key={item.id} {...item} />
+          ))}
         </Row>
       </Container>
     </section>
   );
 }
 
-export default OpeningHours;
+export default React.memo(OpeningHours);

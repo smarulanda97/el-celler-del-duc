@@ -9,3 +9,4 @@ export { default as NodePage } from '@components/Node/NodePage/NodePage';
 export { default as Navigation } from '@components/Navigation/Navigation';
 export { default as OpeningHours } from '@components/OpeningHours/OpeningHours';
 export { default as BannerContent } from '@components/Banner/BannerContent/BannerContent';
+export { default as OpeningHoursItem } from '@components/OpeningHours/OpeningHoursItem/OpeningHoursItem';
