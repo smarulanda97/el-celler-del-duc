@@ -16,7 +16,11 @@ function Banner(): React.ReactElement {
         field_banner.map((banner: DrupalBannerField) => (
           <Carousel.Item key={banner.id} className={'banner__item'}>
             <div className={'banner__overlay'} />
-            <Image imageStyle={'banner'} media={banner.field_media} />
+            <Image
+              imageStyle={'banner'}
+              media={banner.field_media}
+              options={{ layout: 'fill', objectFit: 'cover' }}
+            />
             <BannerContent {...banner} />
           </Carousel.Item>
         ))}

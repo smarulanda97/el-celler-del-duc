@@ -51,7 +51,11 @@ function Gallery(): React.ReactElement {
             items={field_items}
             render={(element: DrupalParagraphGalleryItem) => (
               <div className={'gallery__item'}>
-                <Image media={element.field_media} imageStyle={'gallery'} />
+                <Image
+                  imageStyle={'gallery'}
+                  media={element.field_media}
+                  options={{ layout: 'responsive' }}
+                />
               </div>
             )}
           />

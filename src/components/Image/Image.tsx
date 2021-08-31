@@ -5,12 +5,20 @@ import { getDerivativeImage } from '@utils/index';
 import { DrupalMediaImageField } from '@libs/types/AppTypes';
 
 interface ImageProps {
-  options?: any;
   imageStyle: string;
   media: DrupalMediaImageField;
+  options: {
+    layout: string;
+    objectFit?: string;
+  };
 }
 
 function Image(props: ImageProps): React.ReactElement {
+  const {
+    options = {
+      layout: 'responsive',
+    },
+  } = props;
   const { src, alt, width, height } = getDerivativeImage(
     props.media,
     props.imageStyle
@@ -21,13 +29,13 @@ function Image(props: ImageProps): React.ReactElement {
   }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <NextImage
       src={src}
       alt={alt}
-      width={width}
-      height={height}
-      objectFit={'cover'}
-      layout={'responsive'}
+      {...props.options}
+      {...(options.layout !== 'fill' ? { width: width, height: height } : {})}
     />
   );
 }
