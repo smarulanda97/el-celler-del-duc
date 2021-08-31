@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { useResource } from '@hooks/useResource';
-import { DrupalNodePageContent } from '@libs/types/AppTypes';
-import NodePage from '@components/Node/NodePage/NodePage';
+import { useResource } from '@hooks/index';
+import { NodePage } from '@components/index';
+import { DrupalNode, DrupalNodePage } from '@libs/types/AppTypes';
 
 function Node(): React.ReactElement {
-  const { node } = useResource();
+  const { node } = useResource<DrupalNode>();
 
   const renderNodeType = () => {
-    if (node?.type && node.type === 'node--page') {
-      return <NodePage {...(node as DrupalNodePageContent)} />;
+    if (node.type === 'node--page') {
+      return <NodePage {...(node as DrupalNodePage)} />;
     }
 
     return <div />;

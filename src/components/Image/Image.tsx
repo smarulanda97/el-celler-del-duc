@@ -1,13 +1,13 @@
 import React from 'react';
 import { default as NextImage } from 'next/image';
 
-import { DrupalMediaImage } from '@libs/types/AppTypes';
+import { DrupalMediaImageField } from '@libs/types/AppTypes';
 import { getDerivativeImage } from '@utils/getDerivativeImage';
 
 interface ImageProps {
   options?: any;
   imageStyle: string;
-  media: DrupalMediaImage;
+  media: DrupalMediaImageField;
 }
 
 function Image(props: ImageProps): React.ReactElement {
