@@ -2,9 +2,9 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSidePropsContext, NextPage } from 'next';
 
+import { getPathFromContext } from '@utils/index';
 import { getMenu, getResource } from '@queries/index';
 import { queryKeys } from '@libs/react-query/constants';
-import { getPathFromContext } from '@utils/getPathFromContext';
 import { App, Banner, Gallery, Location, Node } from '@components/index';
 
 const HomePage: NextPage<any> = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { default as NextImage } from 'next/image';
 
+import { getDerivativeImage } from '@utils/index';
 import { DrupalMediaImageField } from '@libs/types/AppTypes';
-import { getDerivativeImage } from '@utils/getDerivativeImage';
 
 interface ImageProps {
   options?: any;
