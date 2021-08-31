@@ -96,6 +96,18 @@ export interface DrupalParagraphGallery extends DrupalParagraph {
   field_items: DrupalParagraphGalleryItem[];
 }
 
+interface DrupalParagraphOpenHoursItem extends DrupalParagraph {
+  field_title: string;
+  field_subtitle: string;
+}
+
+export interface DrupalParagraphOpenHours extends DrupalParagraph {
+  field_title: string;
+  field_subtitle?: string;
+  field_media: DrupalMediaImageField;
+  field_items: DrupalParagraphOpenHoursItem[];
+}
+
 export interface DrupalGeoLocationField {
   lat: number;
   lng: number;

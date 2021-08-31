@@ -7,5 +7,5 @@ export { default as Gallery } from '@components/Gallery/Gallery';
 export { default as Location } from '@components/Location/Location';
 export { default as NodePage } from '@components/Node/NodePage/NodePage';
 export { default as Navigation } from '@components/Navigation/Navigation';
-export { default as OpeningHour } from '@components/OpeningHour/OpeningHour';
+export { default as OpeningHours } from '@components/OpeningHours/OpeningHours';
 export { default as BannerContent } from '@components/Banner/BannerContent/BannerContent';

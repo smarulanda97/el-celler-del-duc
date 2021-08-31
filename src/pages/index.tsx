@@ -5,14 +5,24 @@ import { GetServerSidePropsContext, NextPage } from 'next';
 import { getPathFromContext } from '@utils/index';
 import { getMenu, getResource } from '@queries/index';
 import { queryKeys } from '@libs/react-query/constants';
-import { App, Banner, Gallery, Location, Node } from '@components/index';
+import {
+  App,
+  Banner,
+  Gallery,
+  Location,
+  Node,
+  OpeningHours,
+} from '@components/index';
 
 const HomePage: NextPage<any> = () => {
   return (
     <App>
       <Banner />
       <Node />
-      {/*<OpeningHour />*/}
+      <OpeningHours />
+      <br />
+      <br />
+      <br />
       <Gallery />
       <Location />
     </App>
