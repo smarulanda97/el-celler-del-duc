@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { Carousel } from 'react-bootstrap';
 
-import { DrupalBanner } from '@libs/types/AppTypes';
+import { DrupalBannerField } from '@libs/types/AppTypes';
 
-function BannerContent(props: DrupalBanner): React.ReactElement {
+function BannerContent(props: DrupalBannerField): React.ReactElement {
   const { field_title, field_subtitle } = props;
 
   return (

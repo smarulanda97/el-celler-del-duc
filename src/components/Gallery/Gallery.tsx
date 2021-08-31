@@ -1,8 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import { useGalleryImages } from '@hooks/index';
+import { useParagraph } from '@hooks/index';
 import { Image, Swiper } from '@components/index';
+import {
+  DrupalParagraphGallery,
+  DrupalParagraphGalleryItem,
+} from '@libs/types/AppTypes';
 
 const breakpoints = {
   '640': {
@@ -17,31 +21,41 @@ const breakpoints = {
 };
 
 function Gallery(): React.ReactElement {
-  const { nodes } = useGalleryImages();
+  const {
+    field_title,
+    field_description,
+    field_items = [],
+  } = useParagraph<DrupalParagraphGallery>('paragraph--gallery');
 
   return (
     <section className={'gallery'}>
       <Container fluid={'xl'}>
         <Row>
           <Col>
-            <h2 className={'gallery__title'}>Galería</h2>
-            <p className={'gallery__description'}>
-              Utilizamos productos frecos y de calidad, nuestra cocina se
-              caracteriza por hacerse en el momento.
-            </p>
+            {field_title && <h2 className={'gallery__title'}>{field_title}</h2>}
+            {field_description && (
+              <div
+                className={'gallery__description'}
+                dangerouslySetInnerHTML={{
+                  __html: field_description.processed,
+                }}
+              />
+            )}
           </Col>
         </Row>
       </Container>
       <div className={'gallery__container'}>
-        <Swiper
-          items={nodes}
-          breakpoints={breakpoints}
-          render={(element) => (
-            <div className={'gallery__item'}>
-              <Image media={element.field_media} imageStyle={'gallery'} />
-            </div>
-          )}
-        />
+        {field_items.length && (
+          <Swiper
+            breakpoints={breakpoints}
+            items={field_items}
+            render={(element: DrupalParagraphGalleryItem) => (
+              <div className={'gallery__item'}>
+                <Image media={element.field_media} imageStyle={'gallery'} />
+              </div>
+            )}
+          />
+        )}
       </div>
     </section>
   );

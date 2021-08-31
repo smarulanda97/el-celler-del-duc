@@ -1,4 +1,4 @@
-import { DrupalMediaImage } from '@libs/types/AppTypes';
+import { DrupalMediaImageField } from '@libs/types/AppTypes';
 
 interface GetDerivativeImage {
   src: string;
@@ -15,7 +15,7 @@ const fallback = {
 };
 
 export function getDerivativeImage(
-  media: DrupalMediaImage,
+  media: DrupalMediaImageField,
   imageStyle: string
 ): GetDerivativeImage {
   const image =

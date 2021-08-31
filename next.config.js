@@ -4,8 +4,8 @@ module.exports = {
     domains: [
       'localhost',
       'img.youtube.com',
-      'dev-api-el-celler-del-duc.pantheonsite.io',
       'api-el-celler-del-duc.lndo.site',
+      'dev-api-el-celler-del-duc.pantheonsite.io',
     ],
   },
 };

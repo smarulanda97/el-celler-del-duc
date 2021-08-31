@@ -1,13 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-import { DrupalBodyField, DrupalNodePage } from '@libs/types/AppTypes';
-
-function createBodyMarkup(body: DrupalBodyField): { __html: string } {
-  return {
-    __html: body.processed,
-  };
-}
+import { DrupalNodePage } from '@libs/types/AppTypes';
 
 function NodePage(props: DrupalNodePage): React.ReactElement {
   const { body } = props;
@@ -16,7 +10,11 @@ function NodePage(props: DrupalNodePage): React.ReactElement {
     <section className={'node node--page'}>
       {body && (
         <Container className="node__body">
-          <div dangerouslySetInnerHTML={createBodyMarkup(body)} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: body.processed,
+            }}
+          />
         </Container>
       )}
     </section>

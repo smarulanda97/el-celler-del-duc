@@ -2,18 +2,14 @@ import React from 'react';
 import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {
-  DrupalNodeGalleryContent,
-  ListItem,
-  SwiperBreakpoint,
-} from '@libs/types/AppTypes';
+import { SwiperBreakpoint } from '@libs/types/AppTypes';
 
 SwiperCore.use([Pagination]);
 
 interface SwiperProps {
+  items: any[];
   breakpoints: SwiperBreakpoint;
-  items: ListItem[] | DrupalNodeGalleryContent[];
-  render: (element: ListItem) => React.ReactElement | null;
+  render: (element: any) => React.ReactElement | null;
 }
 
 function SwiperComponent(props: SwiperProps): React.ReactElement | null {
