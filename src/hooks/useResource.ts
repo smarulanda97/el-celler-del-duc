@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 
+import { DrupalNode } from '@libs/types/AppTypes';
 import { getResource } from '@queries/getResource';
-import { DrupalNodeContent } from '@libs/types/AppTypes';
 
-const fallback: DrupalNodeContent = {
+const fallback: DrupalNode = {
   body: {
     value: '',
     format: '',
@@ -17,11 +17,11 @@ const fallback: DrupalNodeContent = {
   relationshipNames: [],
 };
 
-interface UseResource {
-  node: DrupalNodeContent;
+interface UseResource<NodeType> {
+  node: NodeType;
 }
 
-export function useResource(): UseResource {
+export function useResource<NodeType>(): UseResource<NodeType> {
   const { asPath } = useRouter();
   const { data: node = fallback } = useQuery('node', () => getResource(asPath));
 

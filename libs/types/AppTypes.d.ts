@@ -1,43 +1,5 @@
 import { SwiperOptions } from 'swiper';
 
-interface DrupalPath {
-  pid: number;
-  alias: string;
-  langcode: string;
-}
-
-interface imageDerivatives {
-  links: {
-    [key: string]: {
-      href: string;
-    };
-  };
-}
-
-interface DrupalImage {
-  id: string;
-  type: string;
-  resourceIdObjMeta: {
-    alt: string;
-    height: number;
-    width: number;
-    imageDerivatives: imageDerivatives;
-  };
-}
-
-interface DrupalMediaImage {
-  field_media_image: DrupalImage;
-  field_media_image_mobile: DrupalImage;
-}
-
-interface DrupalBanner {
-  id: string;
-  field_title: string;
-  field_subtitle: string;
-  relationshipNames: string[];
-  field_media: DrupalMediaImage;
-}
-
 export interface DrupalLinkAttributes {
   attributes: {
     [key: string]: string | [];
@@ -65,6 +27,44 @@ export interface DrupalMenuLinkContent {
   items?: DrupalMenuLinkContent[];
 }
 
+interface DrupalImageDerivatives {
+  links: {
+    [key: string]: {
+      href: string;
+    };
+  };
+}
+
+interface DrupalImageField {
+  id: string;
+  type: string;
+  resourceIdObjMeta: {
+    alt: string;
+    height: number;
+    width: number;
+    imageDerivatives: DrupalImageDerivatives;
+  };
+}
+
+interface DrupalMediaImageField {
+  field_media_image: DrupalImageField;
+  field_media_image_mobile?: DrupalImageField;
+}
+
+interface DrupalBannerField {
+  id: string;
+  field_title: string;
+  field_subtitle: string;
+  relationshipNames: string[];
+  field_media: DrupalMediaImageField;
+}
+
+interface DrupalPathField {
+  pid: number;
+  alias: string;
+  langcode: string;
+}
+
 export interface DrupalBodyField {
   value: string;
   format: string;
@@ -72,53 +72,60 @@ export interface DrupalBodyField {
   summary: string;
 }
 
-export interface DrupalGeoLocationField {
-  lat: number;
-  lng: number;
-  data: any[];
-  value: string;
-}
-
-export interface DrupalNodeContent {
+export interface DrupalNode {
   id: string;
   type: string;
   title: string;
-  path?: DrupalPath;
+  path?: DrupalPathField;
   body?: DrupalBodyField;
   relationshipNames: string[];
 }
 
-export interface DrupalNodePageContent extends DrupalNodeContent {
-  field_banner?: DrupalBanner[];
+export interface DrupalNodePage extends DrupalNode {
+  field_banner?: DrupalBannerField[];
 }
 
-export interface DrupalNodeGalleryContent extends DrupalNodeContent {
-  field_media?: DrupalMediaImage;
-}
+//
 
-export interface DrupalTaxonomyTerm {
-  id: string;
-  type: string;
-  name: string;
-  description: DrupalBodyField;
-}
+//
 
-export interface DrupalTaxonomyTermRestaurant extends DrupalTaxonomyTerm {
-  field_geolocation: DrupalGeoLocationField;
-}
+//
 
-export type AccessToken = {
-  expires: number;
-  token_type: string;
-  access_token: string;
-};
-
-export interface SwiperBreakpoint {
-  [width: number]: SwiperOptions;
-  [ratio: string]: SwiperOptions;
-}
-
-export interface ListItem {
-  id: string;
-  field_media: DrupalMediaImage;
-}
+//
+// export interface DrupalGeoLocationField {
+//   lat: number;
+//   lng: number;
+//   data: any[];
+//   value: string;
+// }
+//
+// export interface DrupalNodeGalleryContent extends DrupalNodeContent {
+//   field_media?: DrupalMediaImageField;
+// }
+//
+// export interface DrupalTaxonomyTerm {
+//   id: string;
+//   type: string;
+//   name: string;
+//   description: DrupalBodyField;
+// }
+//
+// export interface DrupalTaxonomyTermRestaurant extends DrupalTaxonomyTerm {
+//   field_geolocation: DrupalGeoLocationField;
+// }
+//
+// export type AccessToken = {
+//   expires: number;
+//   token_type: string;
+//   access_token: string;
+// };
+//
+// export interface SwiperBreakpoint {
+//   [width: number]: SwiperOptions;
+//   [ratio: string]: SwiperOptions;
+// }
+//
+// export interface ListItem {
+//   id: string;
+//   field_media: DrupalMediaImageField;
+// }

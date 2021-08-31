@@ -1,12 +1,9 @@
 import { axios } from '@libs/axios';
-import { DrupalNodeContent } from '@libs/types/AppTypes';
 import { buildBluePrint, deserialize } from '@utils/index';
 
 const SUBREQUEST_API = '/subrequests?_format=json';
 
-export async function getResource(
-  path: string
-): Promise<DrupalNodeContent | undefined> {
+export async function getResource(path: string): Promise<any> {
   const payload = buildBluePrint(path);
   const { data } = await axios.post(SUBREQUEST_API, payload);
 

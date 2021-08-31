@@ -12,7 +12,7 @@ export function buildBluePrint(path: string): any[] {
     {
       action: 'view',
       requestId: 'resolvedResource',
-      uri: '{{router.body@$.jsonapi.individual}}?include=field_banner,field_banner.field_media',
+      uri: '{{router.body@$.jsonapi.individual}}',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/vnd.api+json',
