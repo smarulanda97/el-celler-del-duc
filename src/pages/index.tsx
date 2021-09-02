@@ -23,6 +23,8 @@ const HomePage: NextPage<any> = () => {
       <br />
       <br />
       <br />
+      <h1>Cambio</h1>
+      
       <Gallery />
       <Location />
     </App>
