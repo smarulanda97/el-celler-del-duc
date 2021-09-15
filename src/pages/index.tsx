@@ -12,6 +12,7 @@ import {
   Location,
   Node,
   OpeningHours,
+  OurStory,
 } from '@components/index';
 
 const HomePage: NextPage<any> = () => {
@@ -19,12 +20,11 @@ const HomePage: NextPage<any> = () => {
     <App>
       <Banner />
       <Node />
+      <OurStory />
       <OpeningHours />
       <br />
       <br />
       <br />
-      <h1>Cambio</h1>
-      
       <Gallery />
       <Location />
     </App>

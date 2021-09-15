@@ -108,6 +108,12 @@ export interface DrupalParagraphOpenHours extends DrupalParagraph {
   field_items: DrupalParagraphOpenHoursItem[];
 }
 
+export interface DrupalParagraphOurStory extends DrupalParagraph {
+  field_title: string;
+  field_description: DrupalBodyField;
+  field_media: DrupalMediaImageField;
+}
+
 export interface DrupalGeoLocationField {
   lat: number;
   lng: number;

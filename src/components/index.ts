@@ -5,6 +5,7 @@ export { default as Banner } from '@components/Banner/Banner';
 export { default as Swiper } from '@components/Swiper/Swiper';
 export { default as Gallery } from '@components/Gallery/Gallery';
 export { default as Location } from '@components/Location/Location';
+export { default as OurStory } from '@components/OurStory/OurStory';
 export { default as NodePage } from '@components/Node/NodePage/NodePage';
 export { default as Navigation } from '@components/Navigation/Navigation';
 export { default as OpeningHours } from '@components/OpeningHours/OpeningHours';
