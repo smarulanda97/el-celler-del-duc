@@ -1,0 +1,78 @@
+@import './../abstracts/a-variables','./../abstracts/a-mixins';
+
+.our-story {
+  padding-bottom: 6rem;
+
+  &__title {
+    color: $primary;
+    font-size: 3.9rem;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 1.8rem;
+    font-family: $font-family-vibes;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    @include respond-below(sm) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__content {
+    margin-bottom: 2.5rem;
+
+    @include respond-below(lg) {
+      max-width: 90%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    p, strong, a, span {
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 32px;
+      color: $gray-light;
+      font-family: $font-family-cabin;
+
+      @include respond-below(sm) {
+        font-size: 1rem;
+      }
+    }
+
+    b, strong {
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+
+  &__ornament {
+    width: 65px;
+    height: 35px;
+    content: " ";
+    margin: 0 auto;
+    display: block;
+    background: url(./../../images/ornament_our_story.png) no-repeat;
+
+    @include respond-below(lg) {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    top: 50%;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    transform: translateY(-50%);
+
+    @include respond-above(xxl) {
+      width: 70%;
+    }
+
+    @include respond-below(sm) {
+      width: 95%;
+    }
+  }
+}

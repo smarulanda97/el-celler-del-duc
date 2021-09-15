@@ -5,7 +5,7 @@
   &__body {
     text-align: center;
     padding-top: 5rem;
-    margin-bottom: 3.75rem;
+    margin-bottom: 3.9rem;
 
     h1, h2, h3, h4, h5, h6 {
       @extend %section-title;
@@ -23,6 +23,10 @@
       @include respond-below(md) {
         max-width: 80%;
         font-size: 1rem;
+      }
+
+      @include respond-below(lg) {
+        max-width: 90%;
       }
     }
   }
