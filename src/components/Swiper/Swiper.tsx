@@ -23,7 +23,11 @@ function SwiperComponent(props: SwiperProps): React.ReactElement | null {
     <Swiper
       preloadImages
       spaceBetween={0}
+      slidesPerColumn={2}
+      slidesPerView={3}
+      slidesPerGroup={3}
       breakpoints={breakpoints}
+      slidesPerColumnFill={'row'}
       pagination={{ clickable: true, dynamicBullets: true }}
     >
       {items.map((item: any) => (
