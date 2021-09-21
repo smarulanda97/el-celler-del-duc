@@ -8,8 +8,11 @@ import { DPGallery, DPGalleryItem } from '@libs/types/AppTypes';
 
 function Gallery(): React.ReactElement {
   const options = getGalleryOptions();
-  const { field_title, field_items, field_description } =
-    useParagraph<DPGallery>('paragraph--gallery');
+  const {
+    field_title,
+    field_items = [],
+    field_description,
+  } = useParagraph<DPGallery>('paragraph--gallery');
 
   return (
     <section className={'gallery'}>
