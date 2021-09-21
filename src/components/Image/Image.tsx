@@ -10,6 +10,7 @@ interface ImageProps {
   options: {
     layout: string;
     objectFit?: string;
+    priority?: boolean;
   };
 }
 

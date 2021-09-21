@@ -19,7 +19,7 @@ function Banner(): React.ReactElement {
             <Image
               imageStyle={'banner'}
               media={banner.field_media}
-              options={{ layout: 'fill', objectFit: 'cover' }}
+              options={{ layout: 'fill', objectFit: 'cover', priority: true }}
             />
             <BannerContent {...banner} />
           </Carousel.Item>
