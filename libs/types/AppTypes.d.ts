@@ -90,11 +90,15 @@ interface DrupalParagraphGalleryItem extends DrupalParagraph {
   field_media: DrupalMediaImageField;
 }
 
+export type DPGalleryItem = DrupalParagraphGalleryItem;
+
 export interface DrupalParagraphGallery extends DrupalParagraph {
   field_title: string;
   field_description: DrupalBodyField;
   field_items: DrupalParagraphGalleryItem[];
 }
+
+export type DPGallery = DrupalParagraphGallery;
 
 interface DrupalParagraphOpenHoursItem extends DrupalParagraph {
   field_title: string;

@@ -2,34 +2,14 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { useParagraph } from '@hooks/index';
+import { getGalleryOptions } from '@utils/index';
 import { Image, Swiper } from '@components/index';
-import {
-  DrupalParagraphGallery,
-  DrupalParagraphGalleryItem,
-} from '@libs/types/AppTypes';
-
-const breakpoints = {
-  '640': {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    slidesPerColumn: 1,
-  },
-  '768': {
-    slidesPerView: 2,
-    slidesPerGroup: 2,
-    slidesPerColumn: 2,
-  },
-  '1024': {
-    slidesPerView: 3,
-  },
-};
+import { DPGallery, DPGalleryItem } from '@libs/types/AppTypes';
 
 function Gallery(): React.ReactElement {
-  const {
-    field_title,
-    field_description,
-    field_items = [],
-  } = useParagraph<DrupalParagraphGallery>('paragraph--gallery');
+  const options = getGalleryOptions();
+  const { field_title, field_items, field_description } =
+    useParagraph<DPGallery>('paragraph--gallery');
 
   return (
     <section className={'gallery'}>
@@ -51,9 +31,9 @@ function Gallery(): React.ReactElement {
       <div className={'gallery__container'}>
         {field_items.length && (
           <Swiper
-            breakpoints={breakpoints}
+            options={options}
             items={field_items}
-            render={(element: DrupalParagraphGalleryItem) => (
+            render={(element: DPGalleryItem) => (
               <div className={'gallery__item'}>
                 <Image
                   imageStyle={'gallery'}
