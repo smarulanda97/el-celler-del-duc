@@ -1,0 +1,124 @@
+@import './../abstracts/a-variables','./../abstracts/a-mixins';
+
+.testimonial {
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+  }
+
+  &__container {
+    padding: 2rem 0;
+
+    @include respond-below(sm) {
+      text-align: center;
+    }
+  }
+
+  &__img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    background: url(./../../images/icon_testimonials.png);
+  }
+
+  &__title {
+    font-size: 2em;
+    color: $primary;
+    font-weight: 300;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: $font-family-oswald;
+
+    @include respond-below(sm) {
+      margin-top: 3rem;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    @include respond-above(sm) {
+      &:after {
+        left: 0;
+        width: 35%;
+        height: 3px;
+        content: '';
+        bottom: -10px;
+        position: absolute;
+        background-color: #e2e9ed;
+      }
+    }
+
+    @include respond-between(md, lg) {
+      margin-top: 1rem;
+    }
+  }
+
+  &__content {
+    @include respond-below(sm) {
+      padding-right: 3rem;
+      padding-left: 3rem;
+      text-align: left;
+    }
+  }
+
+  &__desc {
+    color: #e2e9ed;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.8em;
+    margin-top: 1.9rem;
+    position: relative;
+    font-size: 1.563rem;
+    padding-right: 2rem;
+    margin-bottom: 1.9rem;
+    font-family: $font-family-cabin;
+  }
+
+  &__icon {
+    z-index: 1;
+    top: 0;
+    right: 0;
+    color: $primary;
+    font-weight: 700;
+    font-size: 4.5rem;
+    position: absolute;
+    font-family: $font-familiy-bitter;
+  }
+
+  &__author {
+    color: $primary;
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-family: $font-family-cabin;
+  }
+
+  .swiper {
+    &-container {
+      max-width: 100%;
+    }
+
+    &-pagination {
+      &-bullet {
+        opacity: 1;
+        width: 12px;
+        height: 12px;
+        transform: scale(1);
+        background: transparent;
+        border: solid 2px $primary;
+
+        &-active {
+          background: $primary;
+        }
+      }
+    }
+  }
+}
