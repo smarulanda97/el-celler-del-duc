@@ -35,6 +35,8 @@ function Image(props: ImageProps): React.ReactElement {
     <NextImage
       src={src}
       alt={alt}
+      quality={90}
+      lazyBoundary={'300px'}
       {...props.options}
       {...(options.layout !== 'fill' ? { width: width, height: height } : {})}
     />
