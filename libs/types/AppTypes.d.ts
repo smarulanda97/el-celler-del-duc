@@ -118,6 +118,11 @@ export interface DrupalParagraphOurStory extends DrupalParagraph {
   field_media: DrupalMediaImageField;
 }
 
+export interface DrupalParagraphTestimonials extends DrupalParagraph {
+  field_title: string;
+  field_media: DrupalMediaImageField;
+}
+
 export interface DrupalGeoLocationField {
   lat: number;
   lng: number;

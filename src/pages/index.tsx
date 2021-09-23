@@ -13,6 +13,7 @@ import {
   Node,
   OpeningHours,
   OurStory,
+  Testimonial,
 } from '@components/index';
 
 const HomePage: NextPage<any> = () => {
@@ -22,10 +23,9 @@ const HomePage: NextPage<any> = () => {
       <Node />
       <OurStory />
       <OpeningHours />
-      <br />
-      <br />
-      <br />
+      <h2 className={'text-center py-5'}>Menu here</h2>
       <Gallery />
+      <Testimonial />
       <Location />
     </App>
   );

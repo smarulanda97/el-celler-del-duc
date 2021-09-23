@@ -8,6 +8,7 @@ export { default as Location } from '@components/Location/Location';
 export { default as OurStory } from '@components/OurStory/OurStory';
 export { default as NodePage } from '@components/Node/NodePage/NodePage';
 export { default as Navigation } from '@components/Navigation/Navigation';
+export { default as Testimonial } from '@components/Testimonial/Testimonial';
 export { default as OpeningHours } from '@components/OpeningHours/OpeningHours';
 export { default as BannerContent } from '@components/Banner/BannerContent/BannerContent';
 export { default as OpeningHoursItem } from '@components/OpeningHours/OpeningHoursItem/OpeningHoursItem';
